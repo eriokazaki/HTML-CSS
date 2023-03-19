@@ -8,58 +8,68 @@ body {
 * {
     margin: 0;
     padding: 0;
-}
-
-.FirstView {
-    background-image: url(https://camp.potepan.com/wp-content/themes/potepancamp/assets/images/home/first-view/top-hero.jpg);
-    background-size: cover;
-    background-position: center;
-    width: 100%;
+    box-sizing: border-box;
 }
 
 /* header */
 .Header {
+    width: 100%;
     padding: 20px 0;
+    position: absolute;
 }
+
 
 .HeaderContainer {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0;
-    margin: 0 2%;
+    margin: 0 36px;
+    max-width: 100%;
+    position: relative;
 }
 
-.HeaderLogo {
+.HeaderLogo__image__pc {
     display: block;
     height: 20px;
     width: auto;
 }
 
-/* nav */
+img {
+    border: 0;
+    vertical-align: middle;
+}
 
-.HeaderNavList {
-    height: 40px;
+/* nav */
+.HeaderContainer >*:last-child {
+    display: inline-flex;
+}
+
+.HeaaderNavHamburger {
+    display: none;
+}
+
+.HeaderNavList__pc {
     align-items: center;
     display: flex;
     justify-content: space-between;
+}
+
+ul {
     list-style: none;
+}
+
+.HeaderNavListItem {
     margin-right: 45px;
 }
 
 .HeaderNavItem__link {
-    margin-right: 110px;
+    display: block;
 }
 
 a {
     color: #333;
     text-decoration: none;
-}
-
-.HeaderNavItem__link>span {
-    display: block;
-    font-weight: 700;
-    text-align: center;
 }
 
 .HeaderNavItem__link span:first-child {
@@ -68,6 +78,20 @@ a {
 
 .HeaderNavItem__link>span:last-child {
     font-size: 10px;
+}
+
+.HeaderNavItem__link>span {
+    display: block;
+    font-weight: 700;
+    text-align: center;
+}
+
+.HeaderNavListItem:last-of-type {
+    margin-right: 0;
+}
+
+.HeaderNavListItem__link:visited {
+    color: #fff;
 }
 
 .HeaderNavListItem__button {
@@ -87,36 +111,27 @@ a {
     font-size: 12px;
     height: 40px;
     padding: 0 20px;
-}
-
-.HeaderNavListItem__button a {
     color: #fff;
-}
-
-/* header content */
-.FirstViewContent {
-    margin-bottom: 70px;
-    width: fit-content;
-}
-
-.FirstViewDiscription {
-    color: #a2a2a4;
-    font-size: 12px;
-}
-
-.FirstViewDiscription p {
-    line-height: 1.5;
-}
-
-.FirstViewDiscription a {
-    color: #a2a2a4;
-    text-decoration: none;
 }
 
 /* main */
 main {
-    padding-top: 20px;
-    padding-bottom: 20px;
+    display: block;
+}
+
+.FirstView {
+    background-image: url(https://camp.potepan.com/wp-content/themes/potepancamp/assets/images/home/first-view/top-hero.jpg);
+    background-size: cover;
+    background-position: center;
+    padding-top: 100px;
+    padding-bottom: 28px;
+}
+
+.FirstView__main-image-sp {
+    display: none;
+}
+
+.FirstView__Container {
     max-width: 1140px;
     padding-left: 50px;
     padding-right: 50px;
@@ -125,11 +140,12 @@ main {
     position: relative;
 }
 
-.div {
-    display: block;
+.FirstViewContent {
+    margin-bottom: 70px;
+    width: fit-content;
 }
 
-.FirstViewContent__button {
+.FirstViewContent__buttons {
     font-size: 16px;
     font-weight: 700;
     text-align: center;
@@ -155,7 +171,7 @@ main {
 }
 
 
-.FirstViewContent__image {
+.FirstViewContent__images {
     margin-bottom: 25px;
     text-align: center;
 }
@@ -172,16 +188,16 @@ img {
     margin-right: 0;
 }
 
-.potelogo :nth-of-type(2) {
+.potelogo:nth-of-type(2) {
     width: 40%;
 }
 
-.FirstViewContent__button a:first-of-type {
+.FirstViewContent__buttons a:first-of-type {
     margin-right: 15px;
     width: 306px;
 }
 
-.FirstViewContent h2 {
+.FirstViewContent__title {
     font-family: 'Lato',sans-serif;
     font-size: 38px;
     margin-bottom: 15px;
@@ -190,14 +206,28 @@ img {
     line-height: 54px;
 }
 
+.FirstViewDiscription {
+    color: #a2a2a4;
+    font-size: 12px;
+}
+
+.p {
+    line-height: 1.5;
+}
+
+.FirstViewDiscription a {
+    color: #a2a2a4;
+    text-decoration: none;
+}
+
 /* about */
-.About_Wrapper {
+.AboutWrapper {
     padding: 120px 0;
     background-color: #f79214;
     padding: 44px 0;
 }
 
-.AboutContent {
+.About {
     display: flex;
     justify-content: space-between;
     max-width: 1140px;
@@ -209,12 +239,13 @@ img {
     align-items: center;
 }
 
-.AboutContent h2 {
+.About h2 {
     font-family: 'Lato',sans-serif;
     font-size: 38px;
+    margin-bottom: 10px;
 }
 
-.AboutContent h2 span {
+.About h2 span {
     font-weight: 900;
 }
 
@@ -223,7 +254,33 @@ img {
 }
 
 .About__text {
-    color: #fff;
+    margin-left: 32px;
+    width: 100%;
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0;
+}
+
+.About__text h2 {
+    font-family: "游ゴシック",YuGothic,"ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,"ＭＳ Ｐゴシック","MS PGothic",sans-serif;
+    letter-spacing: .1em;
+    line-height: 54px;
+    width: 100%;
+    font-weight: 900;
+    font-size: 38px;
+}
+
+.About__text br {
+    display: none;
+}
+
+.About__text h2>span {
+    font-family: 'Lato',sans-serif;
+    font-size: 38px;
+}
+.About__text h2 span {
+    font-weight: 900;
 }
 
 .About__text p {
@@ -231,6 +288,12 @@ img {
     font-weight: 700;
     line-height: 26px;
     margin-bottom: 16px;
+    display: inline-block;
+}
+
+.About__text h2, .About__text p {
+    color: #fff;
+    text-align: left;
 }
 
 .About__button {
@@ -248,7 +311,134 @@ a {
 /* footer */
 
 .FixedFooter__img {
+    bottom: 28px;
+    position: fixed;
+    right: 4px;
+    z-index: 10;
+}
+
+.potecounseling {
     cursor: pointer;
     display: block;
     max-width: 367px;
+}
+
+/* タブレットでのビデオ表示 */
+
+@media screen and (max-width: 1080px) {
+    .Header {
+        background-color: #fff;
+        z-index: 10;
+        position: fixed;
+        width: 100%;
+        padding: 20px 0;
+        position: relative;
+    }
+    .HeaderNavList__pc {
+        display: none;
+    }
+    .HeaderNavHamburger {
+        display: block;
+        cursor: pointer;
+        width: 30px;
+        height: 21px;
+        position: relative;
+        z-index: 100;
+    }
+    .HeaderNavHamburger__line {
+        position: absolute;
+        top: 50%;
+        display: block;
+        width: 100%;
+        height: 3px;
+        border-radius: 10px;
+        background-color: #333;
+        transform: translateY(-50%);
+        transition: top .2s, transform .2s, opacity .3s;
+    }
+    .HeaderNavHamburger__line:first-child {
+        top: 0;
+    }
+    .HeaderNavHamburger__line:last-child {
+        top: 100%;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .About {
+        flex-direction: column;
+    }
+    .About__video {
+        margin-bottom: 16px;
+        width: 75%;
+    }
+    .About__text {
+        margin-left: 0;
+        width: 75%;
+    }
+
+}
+
+@media screen and (max-width: 767px) {
+    .Header {
+        padding: 15px 0;
+    }
+
+    .FirstView__main-image-sp {
+        display: block;
+        width: 100%;
+    }
+    .FirstView {
+        background-image: none;
+        padding-top: 0;
+        padding-bottom: 35px;
+    }
+    .FirstViewContent__title {
+        font-size: 25px;
+        line-height: 36px;
+    }
+    .FirstView__Container {
+        max-width: none;
+        padding: 0 20px;
+        margin-top: -45vw;
+    }
+    .FirstViewContent {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .FirstViewContent__images {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        margin-bottom: 30px;
+    }
+    .potelogo:nth-of-type(2) {
+        width: 40%;
+    }
+    .potelogo {
+        width: 27.5%;
+    }
+    .FirstViewContent__buttons a:first-of-type {
+        width: 100%;
+    }
+    .askdocument {
+        display: none;
+    }
+    .AboutWrapper {
+        padding: 30px 0;
+    }
+    .About {
+        max-width: none;
+        padding: 0 20px;
+    }
+    .About__video {
+        width: 100%;
+    }
+    .About__text {
+        width: 100%;
+    }
+    .About__text h2 span {
+        letter-spacing: 1px;
+    }
+    
 }
