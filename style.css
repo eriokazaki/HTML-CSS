@@ -114,6 +114,7 @@ a {
     color: #fff;
 }
 
+
 /* main */
 main {
     display: block;
@@ -441,4 +442,19 @@ a {
         letter-spacing: 1px;
     }
     
+}
+
+@media screen and (min-width: 768px) {
+    .HeaderNavListItem__button:hover {
+    opacity: .8;
+    }
+    .counseling:hover {
+        opacity: .8;
+    }
+    .askdocument:hover {
+        opacity: .8;
+    }
+    .HeaderNavListItem:hover {
+        opacity: .8;
+    }
 }
